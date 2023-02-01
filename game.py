@@ -2,6 +2,9 @@
 # при помощи виртуального окружения и PIP
 
 # Решение:
+import emoji
+
+
 
 def print_maps():                 # Функция печати игрового поля
     print(maps[0], end = " ")
@@ -60,10 +63,10 @@ while finish == False and count < 9:
     win = get_result()
     if win != '':
         finish = True
-        print('Игра окончена! Победил', win, '!!!')
+        print(emoji.emojize(f'Игра окончена! Победил {win} :1st_place_medal:'))
         break
     else:
         player1 = not player1
         count += 1
 else:
-    print('Игра окончена. Победила дружба!!!')
+    print(emoji.emojize('Игра окончена. Победила дружба :handshake:'))
