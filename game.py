@@ -7,16 +7,16 @@ import emoji
 
 
 def print_maps():                 # Функция печати игрового поля
-    print(maps[0], end = " ")
-    print(maps[1], end = " ")
+    print(maps[0], end = "  ")
+    print(maps[1], end = "  ")
     print(maps[2])
  
-    print(maps[3], end = " ")
-    print(maps[4], end = " ")
+    print(maps[3], end = "  ")
+    print(maps[4], end = "  ")
     print(maps[5])
  
-    print(maps[6], end = " ")
-    print(maps[7], end = " ")
+    print(maps[6], end = "  ")
+    print(maps[7], end = "  ")
     print(maps[8])
 
 def step_maps(step, symbol):      # Функция хода
@@ -26,9 +26,9 @@ def step_maps(step, symbol):      # Функция хода
 def get_result():                 # Проверка победителя
     win = ''
     for i in victories:
-        if maps[i[0]] == 'X' and maps[i[1]] == 'X' and maps[i[2]] == 'X':
+        if maps[i[0]] == emoji.emojize(':cross_mark_button:') and maps[i[1]] == emoji.emojize(':cross_mark_button:') and maps[i[2]] == emoji.emojize(':cross_mark_button:'):
             win = 'X'
-        if maps[i[0]] == '0' and maps[i[1]] == '0' and maps[i[2]] == '0':
+        if maps[i[0]] == emoji.emojize(':O_button_(blood_type): ') and maps[i[1]] == emoji.emojize(':O_button_(blood_type): ') and maps[i[2]] == emoji.emojize(':O_button_(blood_type): '):
             win = '0'
     return win
 
@@ -51,11 +51,11 @@ count = 0          # Счетчик ходов, на случай ничьей
 print_maps()
 while finish == False and count < 9:
     if player1 == True:
-        symbol = 'X'
-        step = int(input("Ходит 'X': "))
+        symbol = emoji.emojize(':cross_mark_button:')
+        step = int(input(emoji.emojize("Ходит :cross_mark_button: : ")))
     else:
-        symbol = '0'
-        step = int(input("Ходит '0': "))
+        symbol = emoji.emojize(':O_button_(blood_type): ')
+        step = int(input(emoji.emojize("Ходит :O_button_(blood_type):  :")))
     if step not in maps:
         step = int(input('Вы ввели не верное значение, попробуйте снова: '))
     step_maps(step, symbol)
